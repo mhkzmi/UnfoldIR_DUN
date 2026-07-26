@@ -1,0 +1,42 @@
+device: cpu
+num_threads: auto
+image_size: 256
+stage_num: 5
+shared_weights: true
+feature_channels: 24
+batch_size: 1
+epochs: 20
+learning_rate: 0.0002
+checkpoint_path: checkpoints/best_cpu.pth
+input_dir: data/input
+output_dir: outputs
+train_low_dir: data/train_low
+train_high_dir: data/train_high
+test_dir: data/test
+save_stage_outputs: true
+exposure_strength: 1.0
+contrast_strength: 1.0
+saturation_strength: 1.0
+inference:
+  mode: tile
+  resize_max_side: 1024
+  tile_size: 384
+  tile_overlap: 48
+loss_weights:
+  l1: 1.0
+  ssim: 0.25
+  gradient: 0.12
+  color: 0.08
+  illumination_smoothness: 0.12
+  texture: 0.08
+  isic: 0.10
+  reconstruction: 1.0
+  exposure: 0.20
+  noise: 0.05
+  saturation: 0.05
+self_supervised:
+  target_exposure: 0.58
+synthetic:
+  samples_per_image: 2
+  gamma_min: 1.6
+  gamma_max: 3.0
