@@ -76,12 +76,6 @@ data/input
 python infer.py --input data\input --output outputs
 ```
 
-یا دستی:
-
-```
-python infer.py --input data\input --output outputs
-```
-
 اگر `checkpoints/best_cpu.pth` موجود نباشد، برنامه با وزن اولیه اجرا می‌شود و پیام می‌دهد که برای کیفیت بهتر باید training انجام شود.
 
 خروجی‌ها:
